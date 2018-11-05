@@ -1,0 +1,11 @@
+/Users/tokoshige_mac/Documents/myVsCode/ParallelProgrammingwithCsharp/bin/Debug/netcoreapp2.1/ParallelProgrammingwithCsharp.deps.json
+/Users/tokoshige_mac/Documents/myVsCode/ParallelProgrammingwithCsharp/bin/Debug/netcoreapp2.1/ParallelProgrammingwithCsharp.runtimeconfig.json
+/Users/tokoshige_mac/Documents/myVsCode/ParallelProgrammingwithCsharp/bin/Debug/netcoreapp2.1/ParallelProgrammingwithCsharp.runtimeconfig.dev.json
+/Users/tokoshige_mac/Documents/myVsCode/ParallelProgrammingwithCsharp/bin/Debug/netcoreapp2.1/ParallelProgrammingwithCsharp.dll
+/Users/tokoshige_mac/Documents/myVsCode/ParallelProgrammingwithCsharp/bin/Debug/netcoreapp2.1/ParallelProgrammingwithCsharp.pdb
+/Users/tokoshige_mac/Documents/myVsCode/ParallelProgrammingwithCsharp/obj/Debug/netcoreapp2.1/ParallelProgrammingwithCsharp.csprojAssemblyReference.cache
+/Users/tokoshige_mac/Documents/myVsCode/ParallelProgrammingwithCsharp/obj/Debug/netcoreapp2.1/ParallelProgrammingwithCsharp.csproj.CoreCompileInputs.cache
+/Users/tokoshige_mac/Documents/myVsCode/ParallelProgrammingwithCsharp/obj/Debug/netcoreapp2.1/ParallelProgrammingwithCsharp.AssemblyInfoInputs.cache
+/Users/tokoshige_mac/Documents/myVsCode/ParallelProgrammingwithCsharp/obj/Debug/netcoreapp2.1/ParallelProgrammingwithCsharp.AssemblyInfo.cs
+/Users/tokoshige_mac/Documents/myVsCode/ParallelProgrammingwithCsharp/obj/Debug/netcoreapp2.1/ParallelProgrammingwithCsharp.dll
+/Users/tokoshige_mac/Documents/myVsCode/ParallelProgrammingwithCsharp/obj/Debug/netcoreapp2.1/ParallelProgrammingwithCsharp.pdb
