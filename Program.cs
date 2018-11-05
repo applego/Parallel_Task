@@ -33,11 +33,21 @@ namespace ParallelProgrammingwithCsharp
             }
             Task.WaitAll(primes_6_Tasks);
             Console.WriteLine($"_6_Tasks Primes found: {primes_6_Tasks.Sum(p => p.Result.Count)}, Total time:{sw_6_Tasks.ElapsedMilliseconds}");
+            //_7_PLINQ
+            var sw_7_PLINQ = new Stopwatch();
+            sw_7_PLINQ.Start();
+            var primes_7_PLINQ = GetPrimeNumbers_AsParallel(2,10000000);
+            Console.WriteLine($"_7_PLINQ Primes found:{primes_7_PLINQ.Count},Total time:{sw_7_PLINQ.ElapsedMilliseconds}");
         }
 
         private static List<int> GetPrimeNumbers(int minimum, int maximum){
             var count = maximum - minimum + 1;
             return Enumerable.Range(minimum, count).Where(IsPrimeNumber).ToList();
+        }
+
+        private static List<int> GetPrimeNumbers_AsParallel(int minimum,int maximum){
+            var count = maximum - minimum +1;
+            return Enumerable.Range(minimum,count).AsParallel().Where(IsPrimeNumber).ToList();
         }
 
         static bool IsPrimeNumber(int p){
