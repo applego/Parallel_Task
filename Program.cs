@@ -38,6 +38,12 @@ namespace ParallelProgrammingwithCsharp
             sw_7_PLINQ.Start();
             var primes_7_PLINQ = GetPrimeNumbers_AsParallel(2,10000000);
             Console.WriteLine($"_7_PLINQ Primes found:{primes_7_PLINQ.Count},Total time:{sw_7_PLINQ.ElapsedMilliseconds}");
+            //_8_Async
+            ProcessPrimesAsync();
+            Console.ReadLine();
+            //_9_ParallelAsync
+            ProcessPrimesAsync_ParallelAsync();
+            Console.ReadLine();
         }
 
         private static List<int> GetPrimeNumbers(int minimum, int maximum){
@@ -59,6 +65,29 @@ namespace ParallelProgrammingwithCsharp
                     return false;
             }
             return true;
+        }
+        //_8_Async
+        private static async void ProcessPrimesAsync(){
+            var sw = new Stopwatch();
+            sw.Start();
+            List<int> primes = await GetPrimeNumbersAsync(2, 10000000);
+            Console.WriteLine($"_8_Async Primes found:{primes.Count},Total time:{sw.ElapsedMilliseconds}");
+        }
+        private static async Task<List<int>> GetPrimeNumbersAsync(int minimum, int maximum){
+            var count = maximum - minimum + 1;
+            return await Task.Factory.StartNew(()=> Enumerable.Range(minimum,count).Where(IsPrimeNumber).ToList());
+        }
+        //_9_ParallelAsync
+        private static async void ProcessPrimesAsync_ParallelAsync(){
+            var sw = new Stopwatch();
+            sw.Start();
+            const int numThreads = 10;
+            Task<List<int>>[] primes = new Task<List<int>>[numThreads];
+            for(int i = 0; i<numThreads;i++){
+                primes[i] = GetPrimeNumbersAsync(i==0 ? 2:i*1000000+1, (i+1)*1000000);
+            }
+            var results = await Task.WhenAll(primes);
+            Console.WriteLine($"_9_ParallelAsync Primes found:{results.Sum(p => p.Count)},Total time:{sw.ElapsedMilliseconds}");
         }
     }
 }
